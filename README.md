@@ -1,307 +1,142 @@
-# NCERT AI Learning Platform - Production Ready 🚀
+# NCERT AI Learning Platform 🎓
 
-## 🎯 Features
+A full-stack AI-powered educational platform built with **FastAPI**, **React**, and **Intel OpenVINO** for optimized performance on Intel hardware.
 
-### ✅ Fully Integrated RAG Chatbot
-- **AI Explanations**: 5 modes (Simple, Meaning, Story, Example, Summary)
-- **Greeting Detection**: Cost-optimized (no LLM calls for greetings)
-- **Strict RAG**: No hallucination - only context-based answers
-- **Vector Database**: 2,193 embeddings from 16 NCERT PDFs in Pinecone
-- **AI Model**: Gemini 2.5 Flash
+<div align="center">
 
-### ✅ Backend (FastAPI)
-- **RAG Chat API**: `/api/chat/` - Context-aware explanations
-- **MCQ Generation**: `/api/mcq/generate` - Auto-generate questions
-- **Evaluation**: `/api/evaluate/mcq` & `/api/evaluate/assessment`
-- **Notes Management**: `/api/notes/` - CRUD operations
-- **MongoDB Atlas**: Persistent storage
-- **Pinecone**: Vector search
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![Intel OpenVINO](https://img.shields.io/badge/Intel-OpenVINO-0071C5?logo=intel&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
+![Pinecone](https://img.shields.io/badge/Pinecone-Vector_DB-000000?logo=pinecone&logoColor=white)
 
-### ✅ Frontend (React + Vite)
-- **PDF Viewer**: 16 NCERT Social Science lessons
-- **AI Panel**: Real-time explanations via backend
-- **Notes System**: Highlight and save notes
-- **Assessment**: Voice-based testing (coming soon)
+</div>
+
+---
+
+## ✨ Core Features
+
+- **AI-Powered Learning Assistant** with multimodal inputs
+- **Multi-role System** (Student, Teacher, Admin)
+- **Real-time Performance Analytics**
+- **Multilingual Support** (English + Indian languages)
+- **Optimized Edge AI** with Intel OpenVINO
+
+---
+
+## 🏗️ Tech Architecture
+
+```text
+project/
+├── backend/                 # FastAPI + OpenVINO
+│   ├── app/                 # 22+ API Routers
+│   ├── services/            # 25+ AI Services
+│   ├── models/              # OpenVINO Models (Git LFS)
+│   └── requirements.txt
+│
+├── frontend/                # React 19 + Vite
+│   ├── src/                 # 22 Pages + Components
+│   ├── stores/              # Zustand State Management
+│   └── package.json
+│
+└── docs/                    # Technical Documentation
+```
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.10+
-- Node.js 18+
-- MongoDB Atlas account
-- Pinecone account
-- Google Gemini API key
-
-### 1. Backend Setup
+### Backend
 
 ```bash
-cd ncert_backend
-
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# Windows:
-venv\Scripts\activate
-# Mac/Linux:
-source venv/bin/activate
-
-# Install dependencies
+cd backend
+python -m venv venv && source venv/bin/activate  # Linux/Mac
+# Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
-# Create .env file (copy from .env.example)
-copy .env.example .env
-
-# Add your API keys to .env:
-# - GEMINI_API_KEY
-# - PINECONE_API_KEY
-# - PINECONE_HOST
-# - MONGO_URI
-
-# Run backend
-python run.py
+cp .env.example .env  # Configure your keys
+uvicorn app.main:app --reload --port 8000
 ```
 
-Backend will start at: **http://localhost:8000**  
-API Docs: **http://localhost:8000/docs**
-
-### 2. Frontend Setup
+### Frontend
 
 ```bash
-cd client
-
-# Install dependencies
+cd frontend
 npm install
-
-# Run frontend
 npm run dev
 ```
 
-Frontend will start at: **http://localhost:5173**
+**Access:**
+- Frontend: `http://localhost:5173`
+- API Docs: `http://localhost:8000/docs`
 
 ---
 
-## 📚 Usage
+## 🔌 Tech Stack
 
-### 1. Open the App
-Visit **http://localhost:5173** in your browser
-
-### 2. Select a Lesson
-Choose from 14 NCERT Social Science lessons
-
-### 3. Highlight Text
-Select any text in the PDF viewer
-
-### 4. Ask AI
-- Click the AI icon
-- Choose explanation mode (Simple, Meaning, Story, Example, Summary)
-- Get instant AI-powered explanations from the backend!
-
-### 5. Save Notes
-- Add heading and content
-- Notes are saved to MongoDB
-- Access them anytime
+| Backend | Frontend | AI/ML | Database |
+|---------|----------|-------|----------|
+| FastAPI | React 19 | Intel OpenVINO | MongoDB Atlas |
+| Python 3.10+ | Vite | Gemini 2.0 | Pinecone |
+| Pydantic | Tailwind | Multilingual RAG | Redis Cache |
 
 ---
 
-## 🔧 API Endpoints
+## ⚡ Performance Features
 
-### Chat / RAG
-```
-POST /api/chat/
-Body: {
-  "class_level": 6,
-  "subject": "Social Science",
-  "chapter": 1,
-  "highlight_text": "What are latitudes?",
-  "mode": "simple"
-}
-```
+- **OpenVINO OCR** - Local text recognition
+- **Edge LLM Inference** - Reduced API costs
+- **Optimized RAG** - Max 2 API calls/query
+- **Multi-key Rotation** - Sustainable scaling
+- **Caching Layer** - Redis + MongoDB
 
-### Generate MCQs
-```
-POST /api/mcq/generate
-Body: {
-  "class_level": 6,
-  "subject": "Social Science",
-  "chapter": 1,
-  "num_questions": 5
-}
-```
+---
 
-### Create Note
-```
-POST /api/notes/
-Body: {
-  "student_id": "student123",
-  "class_level": 6,
-  "subject": "Social Science",
-  "chapter": 1,
-  "page_number": 5,
-  "highlight_text": "Selected text",
-  "note_content": "My note",
-  "heading": "Important concept"
-}
+## 📊 API Categories
+
+```text
+Core:   /api/chat/, /api/mcq/, /api/books/
+Admin:  /api/admin/, /api/tests/
+User:   /api/auth/, /api/user/, /api/support/
+Intel:  /api/admin/intel-status, /api/optimized-chat/
 ```
 
 ---
 
-## 🗂️ Project Structure
+## 🔐 Environment Setup
 
-```
-ncert-working-2/
-├── client/                    # React frontend
-│   ├── src/
-│   │   ├── components/       # UI components
-│   │   ├── services/         # API integration
-│   │   ├── contexts/         # React contexts
-│   │   └── assets/           # PDFs and images
-│   └── package.json
-│
-├── ncert_backend/            # FastAPI backend
-│   ├── app/
-│   │   ├── routers/         # API endpoints
-│   │   ├── services/        # Business logic
-│   │   ├── models/          # Pydantic schemas
-│   │   └── db/              # Database connections
-│   ├── scripts/             # Utility scripts
-│   └── requirements.txt
-│
-└── README.md
+### Backend `.env`:
+
+```text
+GEMINI_API_KEY=your_key
+PINECONE_API_KEY=your_key
+MONGO_URI=your_mongo_uri
 ```
 
----
+### Frontend `.env`:
 
-## 🧪 Testing
-
-### Test Backend
-```bash
-cd ncert_backend
-python scripts/test_chatbot.py
-```
-
-### Test Frontend
-1. Start backend (`python run.py`)
-2. Start frontend (`npm run dev`)
-3. Open browser and test AI panel with text selection
-
----
-
-## 🎨 Frontend Integration
-
-The frontend is fully integrated with the backend:
-
-### `client/src/services/api.js`
-- **chatService**: AI explanations via RAG
-- **mcqService**: MCQ generation and evaluation
-- **notesService**: CRUD operations for notes
-- **assessmentService**: Voice assessment submission
-
-### `client/src/components/annotations/AIPanel.jsx`
-- Real-time AI explanations
-- 5 explanation modes
-- Error handling
-- Loading states
-
----
-
-## 📦 Technologies
-
-### Backend
-- **Framework**: FastAPI
-- **AI**: Google Gemini 2.5 Flash
-- **Vector DB**: Pinecone (2,193 embeddings)
-- **Database**: MongoDB Atlas
-- **OCR**: Tesseract + Poppler
-
-### Frontend
-- **Framework**: React 18 + Vite
-- **UI**: Tailwind CSS + shadcn/ui
-- **PDF**: react-pdf
-- **State**: React Context API
-
----
-
-## 🔐 Environment Variables
-
-### Backend (`.env`)
-```env
-# API Keys
-GEMINI_API_KEY=your_gemini_api_key
-PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_HOST=your_pinecone_host
-MONGO_URI=your_mongodb_connection_string
-
-# Server Config
-HOST=0.0.0.0
-PORT=8000
-DEBUG=true
-FRONTEND_URL=http://localhost:5173
-```
-
-### Frontend (`.env`)
-```env
+```text
 VITE_API_BASE_URL=http://localhost:8000/api
 ```
 
 ---
 
-## 📈 Performance
+## 🎯 Production Ready
 
-- **Vector Search**: 0.7084 similarity score (excellent!)
-- **Response Time**: <2 seconds for AI explanations
-- **Database**: 2,193 vectors, 768 dimensions
-- **Greeting Detection**: 0ms (no API calls)
-
----
-
-## 🎯 Next Steps
-
-- [ ] Add authentication (JWT)
-- [ ] Deploy to production (Vercel + Railway)
-- [ ] Add more subjects and classes
-- [ ] Implement voice assessment UI
-- [ ] Add real-time collaboration
-- [ ] Add progress tracking
-
----
-
-## 🤝 Contributing
-
-This is a production-ready educational platform. To contribute:
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
+- ✅ Multi-tenant Architecture
+- ✅ API Rate Limiting
+- ✅ Performance Monitoring
+- ✅ Error Logging
+- ✅ CORS & Security Headers
 
 ---
 
 ## 📝 License
 
-MIT License - See LICENSE file for details
+MIT License - see [LICENSE](LICENSE)
 
----
+<div align="center">
 
-## 🙏 Acknowledgments
+**Built with Intel OpenVINO for Edge AI Excellence**
 
-- NCERT for educational content
-- Google Gemini for AI capabilities
-- Pinecone for vector search
-- MongoDB for database
-- FastAPI & React communities
-
----
-
-## 💡 Support
-
-For issues and questions:
-- GitHub Issues: [Create an issue](https://github.com/Winterbear0701/ncert-working-2/issues)
-- Documentation: Check `/docs` endpoint on backend
-
----
-
-**Made with ❤️ for NCERT Students**
+</div>
