@@ -1,0 +1,49 @@
+# FastAPI Core
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+python-dotenv==1.0.0
+
+# Pydantic
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Database - MongoDB Atlas
+pymongo==4.6.1
+motor==3.3.2
+
+# Vector Database - Pinecone
+pinecone-client==3.0.0
+
+# Google Gemini AI
+google-generativeai==0.3.2
+
+# HTTP Requests
+httpx==0.26.0
+
+# Validation & Security
+email-validator==2.1.0
+
+# Testing (optional)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# PDF Processing & OCR (Intel OpenVINO optimized)
+PyPDF2==3.0.1
+pdf2image==1.17.0
+Pillow==10.2.0
+opencv-python-headless==4.9.0.80
+numpy>=1.24.0,<2.0.0
+
+# Intel OpenVINO OCR (replaces Tesseract)
+openvino>=2024.0.0
+requests>=2.31.0
+
+# Intel OpenVINO Local LLM for MCQ Generation
+transformers>=4.35.0
+optimum[openvino]>=1.14.0
+sentencepiece>=0.1.99
+
+# Multilingual Support & API Optimization
+langdetect>=1.0.9
+easyocr>=1.7.0

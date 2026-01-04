@@ -1,0 +1,273 @@
+{
+  "subjects": [
+    {
+      "id": "math",
+      "name": "Mathematics",
+      "icon": "calculator",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "science",
+      "name": "Science",
+      "icon": "flask",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "icon": "atom",
+      "availableFor": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "icon": "beaker",
+      "availableFor": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "icon": "leaf",
+      "availableFor": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social Science",
+      "icon": "globe",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "english",
+      "name": "English",
+      "icon": "book",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "hindi",
+      "name": "Hindi",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "urdu",
+      "name": "Urdu",
+      "icon": "languages",
+      "availableFor": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "tamil",
+      "name": "Tamil",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "telugu",
+      "name": "Telugu",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "bengali",
+      "name": "Bengali",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "marathi",
+      "name": "Marathi",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "gujarati",
+      "name": "Gujarati",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "kannada",
+      "name": "Kannada",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "malayalam",
+      "name": "Malayalam",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "punjabi",
+      "name": "Punjabi",
+      "icon": "languages",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "sanskrit",
+      "name": "Sanskrit",
+      "icon": "book-open",
+      "availableFor": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "cs",
+      "name": "Computer Science",
+      "icon": "laptop",
+      "availableFor": [
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "markRanges": [
+    {
+      "min": 0,
+      "max": 32,
+      "grade": "F",
+      "label": "Needs Improvement"
+    },
+    {
+      "min": 33,
+      "max": 44,
+      "grade": "D",
+      "label": "Pass"
+    },
+    {
+      "min": 45,
+      "max": 59,
+      "grade": "C",
+      "label": "Average"
+    },
+    {
+      "min": 60,
+      "max": 74,
+      "grade": "B",
+      "label": "Good"
+    },
+    {
+      "min": 75,
+      "max": 89,
+      "grade": "A",
+      "label": "Very Good"
+    },
+    {
+      "min": 90,
+      "max": 100,
+      "grade": "A+",
+      "label": "Excellent"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "usr_001",
+      "email": "demo@student.com",
+      "password": "demo123",
+      "role": "student",
+      "isOnboarded": true,
+      "profile": {
+        "name": "Arjun Kumar",
+        "classLevel": 10,
+        "username": "arjun_k",
+        "avatarSeed": "arjun2024"
+      }
+    },
+    {
+      "id": "usr_002",
+      "email": "new@student.com",
+      "password": "new123",
+      "role": "student",
+      "isOnboarded": false,
+      "profile": null
+    },
+    {
+      "id": "usr_003",
+      "email": "priya@student.com",
+      "password": "priya123",
+      "role": "student",
+      "isOnboarded": true,
+      "profile": {
+        "name": "Priya Sharma",
+        "classLevel": 8,
+        "username": "priya_s",
+        "avatarSeed": "priya2024"
+      }
+    },
+    {
+      "id": "usr_004",
+      "email": "teacher@school.com",
+      "password": "teacher123",
+      "role": "teacher",
+      "isOnboarded": false,
+      "profile": null
+    }
+  ]
+}

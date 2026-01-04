@@ -1,0 +1,41 @@
+{
+  "classes": [
+    {
+      "level": 6,
+      "displayName": "Class 6",
+      "subjects": ["Mathematics", "Science", "Social Science", "English", "Hindi"]
+    },
+    {
+      "level": 7,
+      "displayName": "Class 7",
+      "subjects": ["Mathematics", "Science", "Social Science", "English", "Hindi"]
+    },
+    {
+      "level": 8,
+      "displayName": "Class 8",
+      "subjects": ["Mathematics", "Science", "Social Science", "English", "Hindi"]
+    },
+    {
+      "level": 9,
+      "displayName": "Class 9",
+      "subjects": ["Mathematics", "Science", "Social Science", "English", "Hindi", "Computer Science"]
+    },
+    {
+      "level": 10,
+      "displayName": "Class 10",
+      "subjects": ["Mathematics", "Science", "Social Science", "English", "Hindi", "Computer Science"]
+    },
+    {
+      "level": 11,
+      "displayName": "Class 11 - Science",
+      "stream": "Science",
+      "subjects": ["Physics", "Chemistry", "Mathematics", "Biology", "English", "Computer Science"]
+    },
+    {
+      "level": 12,
+      "displayName": "Class 12 - Science",
+      "stream": "Science",
+      "subjects": ["Physics", "Chemistry", "Mathematics", "Biology", "English", "Computer Science"]
+    }
+  ]
+}
