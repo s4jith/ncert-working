@@ -1,0 +1,192 @@
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
+import useUserStore from "../stores/userStore";
+import { AnimatedCharacters } from "../components/ui/animated-characters";
+import { Slack } from "lucide-react";
+/**
+ * Signup Page - Clean White Minimal Design
+ */
+export default function Signup() {
+  const navigate = useNavigate();
+  const { setUser } = useUserStore();
+  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [selectedRole, setSelectedRole] = useState("student");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [isTypingPassword, setIsTypingPassword] = useState(false);
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    
+    if (!name || !email || !password) {
+      setError("Please fill in all fields");
+      return;
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+      return;
+    }
+
+    setIsLoading(true);
+    setError("");
+
+    setTimeout(() => {
+      if (selectedRole === "teacher") {
+        navigate("/teacher");
+      } else {
+        setUser({
+          id: "mock-user-id",
+          name: name,
+          email: email,
+          role: selectedRole,
+          isOnboarded: false,
+        });
+        navigate("/onboarding");
+      }
+      setIsLoading(false);
+    }, 800);
+  };
+
+  return (
+    <div className="min-h-screen w-full flex bg-white page-animate">
+      {/* Left side - Branding + Animated Characters */}
+      <div className="hidden lg:flex lg:w-1/2 flex-col items-center justify-between bg-slate-50 py-12">
+        {/* Top - Brand Name */}
+        <div className="mb-2 flex items-center gap-2 relative right-[150px]" >
+          <span><Slack  /></span>
+        <h1 
+          className="text-3xl font-bold tracking-wide "
+          style={{ 
+            fontFamily: "'Space Grotesk', sans-serif",
+            color: '#ef4444'
+          }}
+        >
+         THE BRAINWAVE
+          </h1>
+<p className="absolute -bottom-[60px] left-12 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
+  Synchronizing minds with smarter learning.
+Built for focus, clarity, and growth.
+</p>
+          
+        </div>
+        
+        {/* Bottom - Animated Characters */}
+        <div className="mb-10">
+          <AnimatedCharacters 
+            password={password} 
+            showPassword={showPassword} 
+            isTyping={isTypingPassword}
+          />
+        </div>
+      </div>
+
+      {/* Right side - Signup Form */}
+      <div className="w-full lg:w-1/2 flex items-center justify-center px-8">
+        <div className="w-full max-w-md">
+          {/* Header */}
+          <div className="text-center mb-10">
+            <h1 className="text-4xl font-bold text-gray-900 mb-3">Join us!</h1>
+            <p className="text-gray-500">
+              Create your account to start learning today.
+            </p>
+          </div>
+
+          {/* Role Toggle */}
+          <div className="flex justify-center gap-6 mb-8">
+            <button
+              type="button"
+              onClick={() => setSelectedRole("student")}
+              className={`text-sm font-medium transition-colors ${
+                selectedRole === "student"
+                  ? "text-green-500"
+                  : "text-gray-400 hover:text-gray-600"
+              }`}
+            >
+              Student
+            </button>
+            <span className="text-gray-300">|</span>
+            <button
+              type="button"
+              onClick={() => setSelectedRole("teacher")}
+              className={`text-sm font-medium transition-colors ${
+                selectedRole === "teacher"
+                  ? "text-green-500"
+                  : "text-gray-400 hover:text-gray-600"
+              }`}
+            >
+              Teacher
+            </button>
+          </div>
+
+          <form onSubmit={handleSignup} className="space-y-4">
+            {/* Name */}
+            <input
+              type="text"
+              placeholder="Your full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full h-14 px-5 bg-gray-100 rounded-2xl text-gray-900 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-gray-200 transition-all"
+            />
+
+            {/* Email */}
+            <input
+              type="email"
+              placeholder="Your email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full h-14 px-5 bg-gray-100 rounded-2xl text-gray-900 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-gray-200 transition-all"
+            />
+
+            {/* Password */}
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                placeholder="Create a password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onFocus={() => setIsTypingPassword(true)}
+                onBlur={() => setIsTypingPassword(false)}
+                className="w-full h-14 px-5 pr-12 bg-gray-100 rounded-2xl text-gray-900 placeholder:text-gray-400 outline-none focus:ring-2 focus:ring-gray-200 transition-all"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+              </button>
+            </div>
+
+            {/* Error */}
+            {error && (
+              <p className="text-red-500 text-sm text-center">{error}</p>
+            )}
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full h-14 mt-4 font-semibold rounded-2xl bg-gray-900 hover:bg-gray-800 text-white transition-colors"
+            >
+              {isLoading ? "Creating account..." : "Get Started"}
+            </button>
+          </form>
+
+          {/* Footer */}
+          <div className="text-center mt-10 text-gray-400 text-sm">
+            <p>Already have an account?</p>
+            <Link to="/login" className="text-green-500 hover:text-green-600 font-medium">
+              Sign in here
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

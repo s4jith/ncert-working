@@ -1,0 +1,23 @@
+/* Minimal styles - most styling is handled by Tailwind */
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* PDF.js custom styling */
+.react-pdf__Page {
+  background: white;
+  border-radius: 8px;
+}
+
+.react-pdf__Page__textContent {
+  user-select: text;
+  cursor: text;
+}
+
+.react-pdf__Page__annotations {
+  user-select: none;
+}
+
