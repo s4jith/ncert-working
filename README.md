@@ -135,8 +135,3 @@ VITE_API_BASE_URL=http://localhost:8000/api
 
 MIT License - see [LICENSE](LICENSE)
 
-<div align="center">
-
-**Built with Intel OpenVINO for Edge AI Excellence**
-
-</div>
